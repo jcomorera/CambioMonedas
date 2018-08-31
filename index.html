@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<title>Calcular cambio en monedas y billetes</title>
+</head>
+<body>
+	<div id="cuadrado">
+		<center><h1>Calcular cambio</h1></center>
+
+		<div id="formulario">
+			<p>Coste:</p>
+			<input type="number" id="precio" size="8"> €</br>
+			<p>Pagado:</p>
+			<input type="number" id="pagado"> €</br>
+
+		</div>
+		<center>
+		</br>
+		<button onclick="mostrar()">Calcular</button>
+		<h3 id="cambio"></h3>
+		<p id="resultado"></p>
+	</center>
+</div>
+
+
+<script type="text/javascript" src="cambiomonedas-min.js"></script>
+
+</body>
+</html>
