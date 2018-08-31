@@ -40,7 +40,6 @@ function calcularMonedasCambio(cambio){
 		if (cambioRestante >= monedas[i].dinero) {
 			cambioRestante -= monedas[i].dinero;
 			cambioRestante = Math.round(cambioRestante * 100) / 100;
-			console.log(cambioRestante);
 			j++;
 		} else {
 			if (j > 0) {
