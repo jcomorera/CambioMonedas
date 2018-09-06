@@ -1,29 +1,28 @@
-
-function Moneda(moneda, dinero, cantidad, tipo) {
+function Moneda(moneda, dinero, tipo) {
 		this.moneda = moneda;
 		this.dinero = dinero;
-		this.cantidad = cantidad;
+		this.cantidad = 0;
 		this.tipo = tipo;
 }
 
 var monedas = [];
 
 function generarMonedas() {
-	monedas.push(new Moneda("500€", 500.00, 0, "billetes"));
-	monedas.push(new Moneda("200€", 200.00, 0, "billetes"));
-	monedas.push(new Moneda("100€", 100.00, 0, "billetes"));
-	monedas.push(new Moneda("50€", 50.00, 0, "billetes"));
-	monedas.push(new Moneda("20€", 20.00, 0, "billetes"));
-	monedas.push(new Moneda("10€", 10.00, 0, "billetes"));
-	monedas.push(new Moneda("5€", 5.00, 0, "billetes"));
-	monedas.push(new Moneda("2€", 2.00, 0, "monedas"));
-	monedas.push(new Moneda("1€", 1.00, 0, "monedas"));
-	monedas.push(new Moneda("50ct", 0.50, 0, "monedas"));
-	monedas.push(new Moneda("20ct", 0.20, 0, "monedas"));
-	monedas.push(new Moneda("10ct", 0.10, 0, "monedas"));
-	monedas.push(new Moneda("5ct", 0.05, 0, "monedas"));
-	monedas.push(new Moneda("2ct", 0.02, 0, "monedas"));
-	monedas.push(new Moneda("1ct", 0.01, 0, "monedas"));
+	monedas.push(new Moneda("500€", 500.00, "billete"));
+	monedas.push(new Moneda("200€", 200.00, "billete"));
+	monedas.push(new Moneda("100€", 100.00, "billete"));
+	monedas.push(new Moneda("50€", 50.00, "billete"));
+	monedas.push(new Moneda("20€", 20.00, "billete"));
+	monedas.push(new Moneda("10€", 10.00, "billete"));
+	monedas.push(new Moneda("5€", 5.00, "billete"));
+	monedas.push(new Moneda("2€", 2.00, "moneda"));
+	monedas.push(new Moneda("1€", 1.00, "moneda"));
+	monedas.push(new Moneda("50ct", 0.50, "moneda"));
+	monedas.push(new Moneda("20ct", 0.20, "moneda"));
+	monedas.push(new Moneda("10ct", 0.10, "moneda"));
+	monedas.push(new Moneda("5ct", 0.05, "moneda"));
+	monedas.push(new Moneda("2ct", 0.02, "moneda"));
+	monedas.push(new Moneda("1ct", 0.01, "moneda"));
 }
 
 function calcularCambio(precio, pagado) {
@@ -77,6 +76,9 @@ function mostrar(){
 		console.log(monedasCambio);
 
 		for (var i = 0; i < monedasCambio.length; i++) {
+			if (monedasCambio[i].cantidad > 1){
+				monedasCambio[i].tipo += "s";
+			}
 			document.getElementById("resultado").innerHTML += monedasCambio[i].cantidad + " " + monedasCambio[i].tipo + " de " + monedasCambio[i].moneda + "</br>";
 		}	
 	}else{
