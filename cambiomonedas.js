@@ -8,6 +8,7 @@ function Moneda(moneda, dinero, tipo) {
 var monedas = [];
 
 function generarMonedas() {
+	monedas = [];
 	monedas.push(new Moneda("500€", 500.00, "billete"));
 	monedas.push(new Moneda("200€", 200.00, "billete"));
 	monedas.push(new Moneda("100€", 100.00, "billete"));
@@ -73,7 +74,6 @@ function mostrar(){
 		document.getElementById("cambio").innerHTML = "Cambio: " + cambio + "€";
 
 		let monedasCambio = obtenerCambio(precio, pagado);
-		console.log(monedasCambio);
 
 		for (var i = 0; i < monedasCambio.length; i++) {
 			if (monedasCambio[i].cantidad > 1){
