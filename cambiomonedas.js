@@ -44,6 +44,9 @@ function calcularMonedasCambio(cambio){
 		} else {
 			if (j > 0) {
 				monedas[i].cantidad = j;
+				if (monedas[i].cantidad > 1){
+					monedas[i].tipo += "s";
+				}
 				monedasCambio.push(monedas[i]);
 			}
 			i++;
@@ -76,9 +79,6 @@ function mostrar(){
 		let monedasCambio = obtenerCambio(precio, pagado);
 
 		for (var i = 0; i < monedasCambio.length; i++) {
-			if (monedasCambio[i].cantidad > 1){
-				monedasCambio[i].tipo += "s";
-			}
 			document.getElementById("resultado").innerHTML += monedasCambio[i].cantidad + " " + monedasCambio[i].tipo + " de " + monedasCambio[i].moneda + "</br>";
 		}	
 	}else{
